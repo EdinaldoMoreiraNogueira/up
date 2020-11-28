@@ -11,6 +11,8 @@ import ShortinerServices from '../../services/shortinerServices';
 
 import { StatsContainer, StatsRow, StatsBox, StatsBoxTitle } from './styles';
 
+import global from '../../config/global';
+
 class StatusPages extends React.Component {
     constructor(props) {
         super(props);
@@ -61,7 +63,7 @@ class StatusPages extends React.Component {
                     </StatsContainer>
                 ) : (
                         <StatsContainer className="text-center" >
-                            <p><b>https://upserver.tk/{shortnedURL.code}</b></p>
+                            <p><b>{global.HOST_APP + shortnedURL.code}</b></p>
                             <p>Redirecionar para:<br /> <strong><Link to={shortnedURL.url}>{shortnedURL.url}</Link></strong> </p>
                             <StatsRow>
                                 <StatsBox>

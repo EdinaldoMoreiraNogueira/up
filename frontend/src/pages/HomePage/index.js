@@ -3,6 +3,8 @@ import { Container, InputGroup, FormControl, Button, Alert, Spinner } from 'reac
 import Header from '../../components/Header';
 import { ContentContainer, Form, AdsBlock } from './styles';
 import ShortinerServices from '../../services/shortinerServices';
+import global from '../../config/global';
+
 
 
 class HomePage extends React.Component {
@@ -83,7 +85,7 @@ class HomePage extends React.Component {
                                     <InputGroup className="mb-3" >
                                         <FormControl
                                             autoFocus= {true}
-                                            defaultValue={`https:upserver.tk/${code}`}
+                                            defaultValue={global.HOST_APP + code}
                                             ref={(input) => this.inputURL = input}
                                         />
 
@@ -91,7 +93,7 @@ class HomePage extends React.Component {
                                             <Button variant="outline-secondary" onClick={()=> this.copyToClipboard()}>Copiar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                            <p>Para acessar as estástisticas, acesse{ " " } <strong>https://upserver.tk/{code}/status</strong> </p>
+                            <p>Para acessar as estástisticas, acesse {global.HOST_APP + code } </p>
                                 </>
                             ))
                         }

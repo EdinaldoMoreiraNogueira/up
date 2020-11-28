@@ -26,7 +26,7 @@ function generateCode(){
     return response.status(201).json(link);
   
 }
- 
+
 const  getLinks = async(request: Request, response: Response)=>{
     const code = request.params.code as string;
     const link = await linksRepository.findByCode(code);
