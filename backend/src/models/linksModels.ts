@@ -10,19 +10,19 @@ export interface ILinkModel extends Model<Link, ILinkCreationAtributes>, Link {}
 
 
 const LinksModels = database.define<ILinkModel>('link', {
-    id:{
+    id: {
         type:Sequelize.INTEGER.UNSIGNED,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
     },
-    url:{
-        type: Sequelize.STRING(255),
+    url: {
+        type: Sequelize.STRING(275),
         allowNull: false,
 
     },
-    code:{
-        type: Sequelize.STRING(5),
+    code: {
+        type: Sequelize.STRING(30),
         unique: true,
         allowNull: false,
     },

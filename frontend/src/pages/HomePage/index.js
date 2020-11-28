@@ -8,6 +8,7 @@ import ShortinerServices from '../../services/shortinerServices';
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             isLoading: false,
             url: '',
@@ -34,9 +35,14 @@ class HomePage extends React.Component {
 
             } catch (error) {
                 this.setState({ isLoading: false, errorMessage: 'Ops, ocorreu um erro ao encurtar a URL' })
+                console.log(error)
+             
             }
+            
         }
+     
     }
+    
 
     copyToClipboard = async()=> {
         const element = this.inputURL;
@@ -68,7 +74,7 @@ class HomePage extends React.Component {
                         </InputGroup>
 
                         {
-                            isLoading ? (
+                            isLoading ? ( 
 
                                 <Spinner animation="border" />
 
@@ -77,7 +83,7 @@ class HomePage extends React.Component {
                                     <InputGroup className="mb-3" >
                                         <FormControl
                                             autoFocus= {true}
-                                            defaultValue={`https:up.tk${code}`}
+                                            defaultValue={`https:upserver.tk/${code}`}
                                             ref={(input) => this.inputURL = input}
                                         />
 
@@ -85,7 +91,7 @@ class HomePage extends React.Component {
                                             <Button variant="outline-secondary" onClick={()=> this.copyToClipboard()}>Copiar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                            <p>Para acessar as estástisticas acesse: https:up.tk/{code}</p>
+                            <p>Para acessar as estástisticas, acesse{ " " } <strong>https://upserver.tk/{code}/status</strong> </p>
                                 </>
                             ))
                         }
