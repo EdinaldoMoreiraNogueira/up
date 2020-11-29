@@ -6,7 +6,6 @@ import ShortinerServices from '../../services/shortinerServices';
 import global from '../../config/global';
 
 
-
 class HomePage extends React.Component {
     constructor(props) {
         super(props);
@@ -93,7 +92,7 @@ class HomePage extends React.Component {
                                             <Button variant="outline-secondary" onClick={()=> this.copyToClipboard()}>Copiar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                            <p>Para acessar as estástisticas, acesse {global.HOST_APP + code } </p>
+                            <p>Para acessar as estástisticas, acesse{ " " } <strong>{global.HOST_APP + code}/status</strong> </p>
                                 </>
                             ))
                         }
